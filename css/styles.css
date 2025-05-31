@@ -214,3 +214,59 @@ body > * {
   text-align: center;
 }
 
+.pomelo-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0 1.3rem 0;
+}
+
+.pomelo-socials a img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s, filter 0.2s;
+  filter: grayscale(25%);
+}
+
+.pomelo-socials a:hover img {
+  transform: scale(1.12) rotate(-3deg);
+  filter: none;
+  /* Puedes darle color hover: */
+  /* filter: drop-shadow(0 0 4px #F66490aa); */
+}
+
+footer {
+  margin-top: 40px;
+  padding: 30px 0 10px 0;
+  background: none;
+  text-align: center;
+}
+
+.redes-sociales {
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  display: inline-block;
+  margin: 0 48px;
+  vertical-align: middle;
+}
+
+.redes-sociales img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 4px rgba(246, 100, 144, 0.12));
+  transition: transform 0.2s;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.15) rotate(-8deg);
+  filter: drop-shadow(0 4px 12px rgba(246, 100, 144, 0.20));
+}
+
+.footer-copy {
+  color: #393634;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
