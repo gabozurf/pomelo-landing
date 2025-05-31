@@ -152,65 +152,72 @@ body > * {
   margin-bottom: 1rem;
 }
 
-#pomeloForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 18px;
-  gap: 0;
-}
-
 #pomeloForm input[type="email"] {
-  padding: 0.8em 1em;
-  border: none;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-size: 1rem;
-  outline: none;
-  background: #FFF;
+  background-color: #FFF;
+  border: 1.5px solid #F66490;
   color: #393634;
-  box-shadow: 0 1px 4px #F6649011;
-  min-width: 240px;
-  transition: box-shadow 0.2s;
 }
 
 #pomeloForm input[type="email"]:focus {
-  box-shadow: 0 2px 8px #F6649030;
-}
-
-#pomeloForm input[type="email"]::placeholder {
-  color: #888;
-  opacity: 1;
+  border-color: #FC7E43;
+  outline: none;
+  box-shadow: 0 0 0 2px #FDD77A44;
 }
 
 #pomeloForm button {
-  padding: 0.8em 1.4em;
-  background: #F66490;
+  background: #F66490;    /* Color sólido Rosa Pomelo */
   color: #FFF;
   font-weight: 600;
   border: none;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: 0.5rem;
+  padding: 0.65rem 2.5rem;
   font-size: 1rem;
-  cursor: pointer;
   transition: background 0.2s;
-  box-shadow: 0 1px 4px #F6649011;
+  cursor: pointer;
 }
 
-#pomeloForm button:hover,
-#pomeloForm button:focus {
-  background: #FC7E43;
+#pomeloForm button:hover {
+  background: #FC7E43;   /* Efecto hover en Naranja Cáscara */
 }
 
 #form-thankyou {
   color: #F66490;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-top: 1.1rem;
-  text-align: center;
+  margin-top: 1.3rem;
 }
 
+#pomeloForm input[type="email"] {
+  background-color: #FFF;
+  border: 1.5px solid #F66490;
+  color: #393634;
+}
+
+#pomeloForm input[type="email"]:focus {
+  border-color: #FC7E43;
+  outline: none;
+  box-shadow: 0 0 0 2px #FDD77A44;
+}
+
+#pomeloForm button {
+  background: #F66490;   /* Color sólido Rosa Pomelo */
+  color: #FFF;
+  font-weight: 600;
+  border: none;
+  padding: 0.5em 1.3em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#pomeloForm button:hover,
+#pomeloForm button:focus {
+  background: #FC7E43; /* Naranja Cáscara al hacer hover */
+}
+
+#form-thankyou {
+  color: #F66490;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.3rem;
+}

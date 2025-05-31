@@ -60,13 +60,32 @@
     <p>¿Quieres estar entre los primeros en saberlo? Déjanos tu correo. Esto apenas comienza 🍊</p>
   </div>
 
-  <section class="email-box">
-    <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
-    <button>Quiero enterarme</button>
-  </section>
-</main>
+<section class="email-box" id="suscribe-form">
+  <form id="pomeloForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfSDyCeK27skXXjWcQF_f4_Bv4r2LhgUtRA5zLZGIGD2x8aHA/formResponse" method="POST" target="hidden_iframe" autocomplete="off">
+    <input 
+      type="email"
+      name="entry.445653529"
+      placeholder="Tu correo electrónico"
+      aria-label="Correo electrónico"
+      required
+    >
+    <button type="submit">Quiero enterarme</button>
+  </form>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+</section>
+<div id="form-thankyou" style="display:none; color:#F66490; font-weight:600; margin-top:1rem;">
+  ¡Gracias! Pronto recibirás noticias frescas de Pomelo Capital 🍊
+</div>
 
-
+  
+  <script>
+  document.getElementById('pomeloForm').addEventListener('submit', function(e) {
+    setTimeout(function(){
+      document.getElementById('suscribe-form').style.display = 'none';
+      document.getElementById('form-thankyou').style.display = 'block';
+    }, 300); // Un pequeño delay para que envíe correctamente
+  });
+</script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
