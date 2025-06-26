@@ -206,12 +206,19 @@ body > * {
   background: #FC7E43;
 }
 
+/* Mensaje de agradecimiento del formulario */
 #form-thankyou {
+  display: none;
   color: #F66490;
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 1.1rem;
   text-align: center;
+}
+
+/* Oculta el iframe de envío oculto */
+iframe[name="hidden_iframe"] {
+  display: none;
 }
 
 .pomelo-socials {
@@ -233,6 +240,11 @@ body > * {
   filter: none;
   /* Puedes darle color hover: */
   /* filter: drop-shadow(0 0 4px #F66490aa); */
+}
+
+/* Oculta el iframe de envío oculto */
+iframe[name="hidden_iframe"] {
+  display: none;
 }
 
 footer {
