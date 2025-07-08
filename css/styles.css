@@ -20,7 +20,6 @@ body {
 }
 
 /* Navbar styling */
-/* Navbar styling */
 .navbar {
   background-color: #ffffff !important;
   margin-top: 1px;
@@ -248,6 +247,45 @@ body {
     margin-bottom: 1.5rem;
   }
 }
+
+.planes-redes {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planes-redes img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2rem;
+  box-shadow: 0 4px 28px rgba(246,100,144,0.08);
+}
+
+@media (max-width: 575.98px) {
+  .planes-redes img {
+    border-radius: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.planes-redes img {
+  transition: transform 0.28s cubic-bezier(.62,1.53,.52,1), box-shadow 0.22s;
+  box-shadow: 0 4px 28px rgba(246,100,144,0.08);
+  border-radius: 1.2rem;
+}
+
+.planes-redes img:hover {
+  transform: scale(1.035) rotate(-1.7deg);
+  box-shadow: 0 12px 64px rgba(246,100,144,0.18);
+  cursor: pointer;
+}
+
+
 /* Tarjetas centradas y hover editorial */
 #social-media .row.justify-content-center {
   margin-bottom: 2rem;
@@ -302,6 +340,9 @@ body {
   height: auto;
   object-fit: contain;
 }
+
+
+
 
 @media (max-width: 575.98px) {
   /* Reducir gutter vertical de la fila aún más */
@@ -572,16 +613,29 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-start;      /* sitúa el texto al top */
-  justify-content: flex-start;  /* sitúa el texto a la izquierda */
+  align-items: flex-start;
+  justify-content: flex-start;
   color: #ffffff;
-  font-weight: 800;             /* mucho más bold */
-  font-size: 2rem;           /* un poco más grande */
+  font-weight: 800;
+  font-size: 2.4rem;
   text-align: left;
   background-color: rgba(0, 0, 0, 0.15);
-  padding: 1rem;                /* espacio desde el top/left */
+  padding: 1rem;
   z-index: 2;
+  line-height: 1.1;
+  word-break: break-word;
 }
+
+@media (max-width: 767.98px) {
+  .copy-overlay {
+    font-size: 1rem;
+    padding: 0.6rem;
+    line-height: 1.05;
+  }
+}
+
+
+
 
 /* --- Fotografía y Video Section --- */
 .foto-video-section {
@@ -740,6 +794,101 @@ body {
   }
 }
 
+/* PONE LOS STRONG EN ROSA POMELO SOLO EN EL CAROUSEL DE DISEÑO WEB */
+#disenoWebCarousel strong {
+  color: var(--color-pomelo);
+  font-weight: 700;   /* Asegura grosor */
+}
+
+/* --- Flechas Pomelo del Carrusel de Diseño Web --- */
+#disenoWebCarousel .carousel-control-prev,
+#disenoWebCarousel .carousel-control-next {
+  width: 3.2rem;                  /* Un poco más anchas para que sea fácil de pulsar */
+  height: 3.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  z-index: 10;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: opacity 0.2s, left 0.2s, right 0.2s;
+  filter: none;
+  outline: none;
+}
+
+#disenoWebCarousel .carousel-control-prev {
+  left: -2.7rem; /* Saca la flecha izquierda fuera del carrusel */
+}
+
+#disenoWebCarousel .carousel-control-next {
+  right: -2.7rem; /* Saca la flecha derecha fuera del carrusel */
+}
+
+/* Cambia el color del ícono a rosa Pomelo */
+#disenoWebCarousel .carousel-control-prev-icon,
+#disenoWebCarousel .carousel-control-next-icon {
+  background-image: none; /* Borra la imagen default */
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ícono SVG Pomelo */
+}
+
+#disenoWebCarousel .carousel-control-prev-icon::after,
+#disenoWebCarousel .carousel-control-next-icon::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Izquierda: flecha Pomelo */
+#disenoWebCarousel .carousel-control-prev-icon::after {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23F66490' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M11 2L5 8l6 6' stroke='%23F66490' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+/* Derecha: flecha Pomelo */
+#disenoWebCarousel .carousel-control-next-icon::after {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23F66490' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M5 14l6-6-6-6' stroke='%23F66490' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* Al pasar el mouse, más opaco */
+#disenoWebCarousel .carousel-control-prev:hover,
+#disenoWebCarousel .carousel-control-next:hover {
+  opacity: 0.8;
+}
+
+/* En pantallas pequeñas: mete un poco las flechas para que no se salgan */
+@media (max-width: 767.98px) {
+  #disenoWebCarousel .carousel-control-prev,
+  #disenoWebCarousel .carousel-control-next {
+    width: 2.2rem;
+    height: 2.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #disenoWebCarousel .carousel-control-prev {
+    left: -1.7rem;    /* Más afuera */
+  }
+  #disenoWebCarousel .carousel-control-next {
+    right: -1.7rem;   /* Más afuera */
+  }
+  #disenoWebCarousel .carousel-control-prev-icon,
+  #disenoWebCarousel .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  #disenoWebCarousel .carousel-control-prev-icon::after,
+  #disenoWebCarousel .carousel-control-next-icon::after {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
 
 /* — E-Mail Marketing Section — */
 .email-section {
@@ -872,7 +1021,7 @@ body {
     margin-bottom: 1.3rem;
   }
   .branding-col {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
   .container-fluid {
     padding-left: 0.7rem;
@@ -885,7 +1034,7 @@ body {
 .tiktok-section {
   position: relative;
   width: 100vw;
-  min-height: 60vh;
+  min-height: 70vh;
   max-width: 100vw;
   overflow: hidden;
   padding: 0;
@@ -906,7 +1055,7 @@ body {
 }
 
 /* --- Título amarillo sobre el video, alineado a la izquierda --- */
-/* --- TikTok Shop: Título amarillo sobre el video --- */
+/* --- TikTok Shop: Título sobre el video --- */
 .tiktok-title-hero {
   position: absolute;
   z-index: 2;
@@ -914,20 +1063,21 @@ body {
   height: 100%;
   top: 0; left: 0;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;  /* ALINEADO A LA IZQUIERDA */
+  align-items: flex-end;      /* ¡IMPORTANTE! Al fondo */
+  justify-content: flex-start;/* Abajo a la izquierda */
   pointer-events: none;
 }
 
 .tiktok-hero-title-box {
   margin-left: 6vw;
-  max-width: 33vw;  /* <--- Máximo 1/3 del ancho del video */
+  margin-bottom: 5vw;         /* Siempre, no solo en escritorio */
+  max-width: 33vw;            /* 1/3 del ancho */
   min-width: 230px;
 }
 
 .tiktok-hero-title {
-  color: var(--color-amarillo);
-  font-size: 3.6rem; /* Aún más grande */
+  color: #FFF;
+  font-size: 3.6rem;
   font-weight: 900;
   text-shadow: 0 4px 24px rgba(60,10,60,0.18);
   text-align: left;
@@ -940,8 +1090,11 @@ body {
 @media (max-width: 991.98px) {
   .tiktok-hero-title-box {
     margin-left: 3vw;
-    max-width: 40vw;  /* Un poco más en tablet */
-    min-width: 180px;
+    margin-bottom: 6vw;
+    max-width: 60vw;
+    min-width: 120px;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
   .tiktok-hero-title {
     font-size: 2.2rem;
@@ -951,11 +1104,13 @@ body {
 @media (max-width: 767.98px) {
   .tiktok-title-hero {
     justify-content: flex-start;
+    align-items: flex-end;
   }
   .tiktok-hero-title-box {
     margin-left: 2vw;
-    max-width: 75vw;   /* Ocupar más en móvil pero nunca más de 75vw */
-    min-width: 110px;
+    margin-bottom: 8vw;
+    max-width: 90vw;
+    min-width: 80px;
   }
   .tiktok-hero-title {
     font-size: 1.2rem;
@@ -1108,6 +1263,7 @@ body {
   .sobre-nosotros-texto p {
     font-size: 0.95rem;
   }
+
   .sobre-nosotros-imagen img {
     height: auto;
     margin-top: 1.5rem;
@@ -1219,6 +1375,14 @@ body > * {
   animation-delay: 0.3s;
 }
 
+ .newsletter h3 {
+  color: var(--color-pomelo);
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 #pomeloForm {
   display: flex;
   justify-content: center;
@@ -1297,12 +1461,14 @@ footer {
 
 .redes-sociales {
   margin-bottom: 10px;
+  display: flex;                /* Flexbox magic */
+  align-items: center;
+  justify-content: center;      /* Centrado horizontal */
+  gap: 36px;                    /* Espacio entre iconos */
 }
 
 .redes-sociales a {
-  display: inline-block;
-  margin: 0 48px;
-  vertical-align: middle;
+margin: 0;                    /* ¡Flexbox se encarga del espacio! */
 }
 
 .redes-sociales img {
@@ -1323,3 +1489,74 @@ footer {
   opacity: 0.7;
 }
 
+@media (max-width: 600px) {
+  .redes-sociales {
+    gap: 18px;           /* Menos espacio en móvil */
+  }
+}
+
+
+/* --------- MEJORAS TIPOGRAFÍA MÓVIL (Pomelo Capital) --------- */
+@media (max-width: 767.98px) {
+  /* Títulos principales */
+  h1, h2, h3, .branding-title, .sobre-nosotros-title, .foto-video-text h2, .estrategia-text h3,
+  .email-text-content h3, #copywriting h2, #social-media h2, #disenoWebCarousel h3 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    text-align: center;
+    line-height: 1.2;
+  }
+  /* Subtítulos */
+  h4, .foto-video-text h3, .branding-text, .sobre-nosotros-texto strong {
+    font-size: 1.15rem !important;
+    font-weight: 600;
+    text-align: center;
+  }
+  /* Texto normal y listas */
+  p, li, ul, .foto-video-section ul, .tiktok-lead, .tiktok-list li, .email-text-content p, .sobre-nosotros-texto p {
+    font-size: 0.97rem !important;
+    line-height: 1.45;
+  }
+  /* Mejor padding horizontal global */
+  section, .container, .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* --- Botón Pomelo Compacto en Extras --- */
+.extras-btn {
+  display: inline-block;
+  width: auto;
+  min-width: 210px;
+  max-width: 340px;
+  padding: 0.85em 2em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-pomelo);
+  color: #fff !important;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2.5em;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(246, 100, 144, 0.10);
+  transition: background 0.22s, color 0.15s, box-shadow 0.18s;
+}
+
+.extras-btn:hover,
+.extras-btn:focus {
+  background-color: var(--color-cascara);
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 22px rgba(252, 126, 67, 0.18);
+}
+
+@media (max-width: 767.98px) {
+  .extras-btn {
+    font-size: 1rem;
+    min-width: 170px;
+    padding: 0.8em 1.4em;
+  }
+}
